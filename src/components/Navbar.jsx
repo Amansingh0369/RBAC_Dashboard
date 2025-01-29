@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = ({ isSidebarOpen, setIsSidebarOpen, currentRole }) => {
     return (
-        <div className="bg-white shadow-sm transition-all duration-300">
+        <div className="bg-white shadow-sm transition-all duration-300 sticky z-100 top-0">
             <div className="max-w-full mx-auto px-4">
                 <div className="flex justify-between h-16 items-center">
                     <div className="flex items-center">

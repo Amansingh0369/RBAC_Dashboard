@@ -4,7 +4,7 @@ const Sidebar = ({ currentRole, setCurrentRole }) => {
     const roles = ['Admin', 'Editor', 'Viewer'];
 
     return (
-        <div className="w-64 bg-white shadow-sm h-[calc(100vh-4rem)] p-4 transition-all duration-300">
+        <div className="w-24  sm:w-64 bg-white shadow-sm h-screen p-2 sm:p-4 transition-all duration-300 sticky top-16">
             <div className="space-y-2">
                 {roles.map((role) => (
                     <button

@@ -1,27 +1,28 @@
-import React from 'react';
+import React from "react"
 
-const Sidebar = ({ currentRole, setCurrentRole }) => {
-    const roles = ['Admin', 'Editor', 'Viewer'];
+const Sidebar = ({ currentRole, setCurrentRole, isSidebarOpen }) => {
+    const roles = ["Admin", "Editor", "Viewer"]
 
     return (
-        <div className="w-24  sm:w-64 bg-white shadow-sm h-screen p-2 sm:p-4 transition-all duration-300 sticky top-16">
-            <div className="space-y-2">
+        <div
+            className={`bg-gray-900 text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:relative md:translate-x-0 transition duration-200 ease-in-out`}
+        >
+            <nav>
+                <div className="text-white text-xl font-semibold px-4 mb-6">Role Selector</div>
                 {roles.map((role) => (
                     <button
                         key={role}
-                        className={`w-full text-left px-4 py-2 rounded-md transition-all duration-300 ${
-                            currentRole === role
-                                ? 'bg-blue-500 text-white'
-                                : 'hover:bg-gray-100'
+                        className={`block py-2.5 px-4 rounded transition duration-200 w-full text-left ${
+                            currentRole === role ? "bg-white text-black" : "text-gray-400 hover:bg-gray-800 hover:text-white"
                         }`}
                         onClick={() => setCurrentRole(role)}
                     >
                         {role}
                     </button>
                 ))}
-            </div>
+            </nav>
         </div>
-    );
-};
+    )
+}
 
-export default Sidebar;
+export default Sidebar
